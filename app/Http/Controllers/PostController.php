@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Models\Category;
+use App\Models\MessengerBrand;
 use App\Models\Post;
+use App\Services\UploadImageService;
 
 class PostController extends Controller
 {
@@ -28,7 +31,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $messengerBrands = MessengerBrand::all();
+        return view('groups.create', compact('categories','messengerBrands'));
     }
 
     /**
@@ -39,7 +44,11 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $data = $request->validated();
+        $fileName = (new UploadImageService)->do($request->file('image'), 'images/');
+        $data['image'] = $fileName;
+        Post::create($data);
+        return back()->withSuccess(__('messages.group_success'));
     }
 
     /**
