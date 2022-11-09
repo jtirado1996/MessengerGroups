@@ -17,7 +17,8 @@ class MessengerBrandFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->text()
+            'name' => fake()->text(),
+            'color' => fake()->colorName(),
         ];
     }
 }

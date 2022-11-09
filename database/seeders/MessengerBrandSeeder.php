@@ -15,10 +15,6 @@ class MessengerBrandSeeder extends Seeder
      */
     public function run()
     {
-        MessengerBrand::insert([
-            ['name' => 'WhatsApp'],
-            ['name' => 'Telegram'],
-            ['name' => 'Signal'],
-        ]);
+        MessengerBrand::insert([['name' => 'WhatsApp', 'color' => '#00bb2d'], ['name' => 'Telegram', 'color' => '#229ED9'], ['name' => 'Signal', 'color' => '#005187']]);
     }
 }

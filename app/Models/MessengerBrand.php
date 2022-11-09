@@ -9,7 +9,8 @@ class MessengerBrand extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name'
+        'name',
+        'color'
     ];
     public function posts()
     {
