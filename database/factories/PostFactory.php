@@ -23,7 +23,7 @@ class PostFactory extends Factory
             'title' => fake()->jobTitle(),
             'description' => fake()->text(20),
             'link' => 'https://google.com',
-            'image' => 'https://via.placeholder.com/150',
+            'image' => 'default_group.png',
             'category_id' => Category::first()->id,
             'messenger_brand_id' => MessengerBrand::first()->id
         ];

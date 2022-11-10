@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostCategoryController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::resource('grupos',PostController::class);
+Route::get('grupos/category/{category}',[PostCategoryController::class,'postByCategory'])->name('posts.category');

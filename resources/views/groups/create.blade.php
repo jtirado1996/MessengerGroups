@@ -17,7 +17,8 @@
                     @csrf
                     <div class="mb-3">
                         <label for="title" class="form-label">{{ __('messages.form_create_group.title') }}</label>
-                        <input type="text" class="form-control" id="title" name="title" aria-describedby="titleHelp">
+                        <input type="text" class="form-control" id="title" name="title"
+                            aria-describedby="titleHelp">
                     </div>
                     <div class="mb-3">
                         <label for="description"
@@ -53,6 +54,17 @@
                     <div class="mb-3 form-check">
                         <div class="preview">
                             <img id="file-ip-1-preview" width="300" height="300" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <strong>ReCaptcha:</strong>
+                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                                @endif
+                            </div>  
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

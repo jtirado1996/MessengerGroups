@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Rules\MessengerBrandRule;
+use App\Rules\ReCaptcha;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StorePostRequest extends FormRequest
@@ -31,6 +32,7 @@ class StorePostRequest extends FormRequest
             'image' => 'required|mimes:jpeg,jpg,png',
             'category_id' => 'required|exists:categories,id',
             'messenger_brand_id' => 'required|exists:messenger_brands,id',
+            'g-recaptcha-response' => [new ReCaptcha]
         ];
     }
 }

@@ -48,7 +48,7 @@ class PostController extends Controller
         $fileName = (new UploadImageService)->do($request->file('image'), 'images/');
         $data['image'] = $fileName;
         Post::create($data);
-        return back()->withSuccess(__('messages.group_success'));
+        return redirect()->route('grupos.index')->withSuccess(__('messages.group_success'));
     }
 
     /**

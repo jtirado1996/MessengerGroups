@@ -15,6 +15,27 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::factory(20)->create();
+        Category::insert([
+            ['name' => __('categories.dates')],
+            ['name' => __('categories.anime_manga')],
+            ['name' => __('categories.cosplay')],
+            ['name' => __('categories.otaku')],
+            ['name' => __('categories.videogames')],
+            ['name' => __('categories.comics')],
+            ['name' => __('categories.tech')],
+            ['name' => __('categories.automobile')],
+            ['name' => __('categories.animal')],
+            ['name' => __('categories.sports')],
+            ['name' => __('categories.math')],
+            ['name' => __('categories.history')],
+            ['name' => __('categories.cooking')],
+            ['name' => __('categories.fashion')],
+            ['name' => __('categories.music')],
+            ['name' => __('categories.literature')],
+            ['name' => __('categories.travel')],
+            ['name' => __('categories.lgtb')],
+            ['name' => __('categories.adult')],
+            ['name' => __('categories.adult_lgbt')],
+        ]);
     }
 }

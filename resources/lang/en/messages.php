@@ -17,5 +17,6 @@ return [
         'messenger_brand' => 'Messenger provider',
     ],
     'group_success' => 'Group created successfully',
-    'links_error' => 'Field link has incorrect format'
+    'links_error' => 'Field link has incorrect format',
+    'create_new_group' => 'Create new group',
 ];
