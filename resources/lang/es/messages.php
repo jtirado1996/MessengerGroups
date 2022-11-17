@@ -19,4 +19,5 @@ return [
     'group_success' => 'Grupo creado exitosamente',
     'links_error' => 'El vinculo tiene un fomato incorrecto',
     'create_new_group' => 'Crear nuevo grupo',
+    'back' => 'Volver'
 ];

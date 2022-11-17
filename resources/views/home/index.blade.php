@@ -37,11 +37,12 @@
                                 <div class="col-sm-12 col-md-6">
                                     <div class="d-flex flex-column align-items-sm-center">
                                         <a
+                                            style="text-decoration: none;"
                                             href="{{ route('groups.show_slug', ['post' => $post->id, 'slug' => str()->slug($post->title)]) }}">
-                                            <div class="title">
+                                            <div class="title" style="word-break: break-word;">
                                                 {{ $post->title }}
                                             </div>
-                                            <div class="description small d-block">
+                                            <div class="description small d-block" style="word-break: break-word;">
                                                 {{ Str::limit($post->description, 255) }}
                                             </div>
                                         </a>
@@ -68,7 +69,7 @@
                                     <i class="{{ $category->icon }}" style="font-size: 6rem;"></i>
 
                                     <div class="title">
-                                        {{ $category->name }}
+                                        {{ __("categories.{$category->translation_key}") }}
 
                                     </div>
                                 </div>

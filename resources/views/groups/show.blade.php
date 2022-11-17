@@ -4,6 +4,9 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-3 my-2">
+                <a class="btn btn-success" href="{{ url()->previous() }}">{{__('messages.back')}}</a>
+            </div>
             @if ($post)
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="card my-2">

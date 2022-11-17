@@ -4,6 +4,9 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-3 my-2">
+                <a class="btn btn-success" href="{{ url()->previous() }}">{{__('messages.back')}}</a>
+            </div>
             @if (!$posts->isEmpty())
                 @if (session('success'))
                     <h1>{{ session('success') }}</h1>

@@ -4,6 +4,9 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-3 my-2">
+                <a class="btn btn-success" href="{{ url()->previous() }}">{{__('messages.back')}}</a>
+            </div>
             <div class="col-md-12">
                 @if ($errors->any())
                     <div class="alert alert-danger">
