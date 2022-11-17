@@ -28,7 +28,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light" style="background: rgb(0,187,45);background: linear-gradient(90deg, rgba(0,187,45,1) 0%, rgba(34,158,217,1) 50%, rgba(0,81,135,1) 100%);">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">GuatsAppGroups</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
