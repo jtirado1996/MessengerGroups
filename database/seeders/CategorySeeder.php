@@ -16,26 +16,86 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::insert([
-            ['name' => __('categories.dates')],
-            ['name' => __('categories.anime_manga')],
-            ['name' => __('categories.cosplay')],
-            ['name' => __('categories.otaku')],
-            ['name' => __('categories.videogames')],
-            ['name' => __('categories.comics')],
-            ['name' => __('categories.tech')],
-            ['name' => __('categories.automobile')],
-            ['name' => __('categories.animal')],
-            ['name' => __('categories.sports')],
-            ['name' => __('categories.math')],
-            ['name' => __('categories.history')],
-            ['name' => __('categories.cooking')],
-            ['name' => __('categories.fashion')],
-            ['name' => __('categories.music')],
-            ['name' => __('categories.literature')],
-            ['name' => __('categories.travel')],
-            ['name' => __('categories.lgtb')],
-            ['name' => __('categories.adult')],
-            ['name' => __('categories.adult_lgbt')],
+            [
+                'name' => __('categories.dates'),
+                'icon' => 'bi bi-person-hearts',
+            ],
+            [
+                'name' => __('categories.anime_manga'),
+                'icon' => 'bi bi-emoji-kiss',
+            ],
+            [
+                'name' => __('categories.cosplay'),
+                'icon' => 'bi bi-snapchat',
+            ],
+            [
+                'name' => __('categories.otaku'),
+                'icon' => 'bi bi-yin-yang',
+            ],
+            [
+                'name' => __('categories.videogames'),
+                'icon' => 'bi bi-joystick',
+            ],
+            [
+                'name' => __('categories.comics'),
+                'icon' => 'bi bi-book',
+            ],
+            [
+                'name' => __('categories.tech'),
+                'icon' => 'bi bi-robot',
+            ],
+            [
+                'name' => __('categories.automobile'),
+                'icon' => 'bi bi-car-front',
+            ],
+            [
+                'name' => __('categories.animal'),
+                'icon' => 'bi bi-bug-fill',
+            ],
+            [
+                'name' => __('categories.sports'),
+                'icon' => 'bi bi-bicycle',
+            ],
+            [
+                'name' => __('categories.math'),
+                'icon' => 'bi bi-calculator',
+            ],
+            [
+                'name' => __('categories.history'),
+                'icon' => 'bi bi-alipay',
+            ],
+            [
+                'name' => __('categories.cooking'),
+                'icon' => 'bi bi-egg-fried',
+            ],
+            [
+                'name' => __('categories.fashion'),
+                'icon' => 'bi bi-emoji-sunglasses',
+            ],
+            [
+                'name' => __('categories.music'),
+                'icon' => 'bi bi-file-earmark-music',
+            ],
+            [
+                'name' => __('categories.literature'),
+                'icon' => 'bi bi-book-half',
+            ],
+            [
+                'name' => __('categories.travel'),
+                'icon' => 'bi bi-airplane-engines',
+            ],
+            [
+                'name' => __('categories.lgtb'),
+                'icon' => 'bi bi-rainbow',
+            ],
+            [
+                'name' => __('categories.adult'),
+                'icon' => 'bi bi-incognito',
+            ],
+            [
+                'name' => __('categories.adult_lgbt'),
+                'icon' => 'bi bi-incognito',
+            ],
         ]);
     }
 }

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Home')
 
 @section('content')
     <div class="container">
@@ -8,8 +9,12 @@
                 <h1 class="text-center">{{ __('messages.search_title') }}</h1>
                 <div class="card my-2">
                     <div class="card-body">
-                        <input type="search" name="search-group" id="search-group"
-                            placeholder="{{ __('messages.search_bar') }}">
+                        <form action="{{ route('search_group') }}" method="post">
+                            @csrf
+                            <label for="query">{{ __('messages.search_bar') }}</label>
+                            <input class="w-100" type="search" name="query" id="query"
+                                placeholder="{{ __('messages.search_bar') }}">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -19,24 +24,34 @@
                 @foreach ($posts as $post)
                     <div class="col-xs-12 col-sm-12 col-md-3 ">
                         <div class="card my-2">
-                            <div class="messenger_brand" style="background: {{ $post->messengerBrand->color }}; color:white">
+                            <div class="messenger_brand"
+                                style="background: {{ $post->messengerBrand->color }}; color:white">
                                 {{ $post->messengerBrand->name }}
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <img src="{{ $post->image ? asset("storage/images/".$post->image) : asset("storage/default_group.png") }}" alt="" srcset="" width="100" height="100">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="d-flex justify-content-sm-center">
+                                        <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/default_group.png') }}"
+                                            alt="" srcset=""
+                                            style="max-width: 100%;height: auto;">
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="title">
-                                        {{ $post->title }}
-                                    </div>
-                                    <div class="description small   ">
-                                        {{ Str::limit($post->description, 255) }}
-                                    </div>
-                                    <div class="link">
-                                        <a href="{{ $post->link }}">
-                                            {{ __('messages.enter_group') }}
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="d-flex flex-column align-items-sm-center">
+                                        <a
+                                            href="{{ route('groups.show_slug', ['post' => $post->id, 'slug' => str()->slug($post->title)]) }}">
+                                            <div class="title">
+                                                {{ $post->title }}
+                                            </div>
+                                            <div class="description small d-block">
+                                                {{ Str::limit($post->description, 255) }}
+                                            </div>
                                         </a>
+                                        <div class="link mt-4">
+                                            <a href="{{ $post->link }}">
+                                                {{ __('messages.enter_group') }}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -50,11 +65,16 @@
                 @foreach ($categories as $category)
                     <div class="col-xs-12 col-sm-12 col-md-3">
                         <div class="card my-2">
-                            <img src="" alt="" srcset="">
-                            <div class="title">
-                                <a href="{{ route('posts.category',$category->id) }}">{{ $category->name }}</a>
-                                
-                            </div>
+                            <a href="{{ route('posts.category', $category->id) }}">
+                                <div class="text-center">
+                                    <i class="{{ $category->icon }}" style="font-size: 6rem;"></i>
+
+                                    <div class="title">
+                                        {{ $category->name }}
+
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 @endforeach
