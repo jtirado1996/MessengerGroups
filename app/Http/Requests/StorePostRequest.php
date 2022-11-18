@@ -29,7 +29,7 @@ class StorePostRequest extends FormRequest
             'title' => 'required|max:255',
             'description' => 'required|max:255',
             'link' => ['required', 'url', new MessengerBrandRule()],
-            'image' => 'required|mimes:jpeg,jpg,png',
+            'image' => 'nullable|mimes:jpeg,jpg,png',
             'category_id' => 'required|exists:categories,id',
             'messenger_brand_id' => 'required|exists:messenger_brands,id',
             'g-recaptcha-response' => [new ReCaptcha]

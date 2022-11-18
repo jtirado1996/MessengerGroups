@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('meta')
+{!! SEO::generate() !!}
+@endsection
 @section('content')
     <div class="container">
         <div class="row">
@@ -20,7 +23,7 @@
             <div class="row">
                 <h1 class="text-center">{{ __('messages.latest_groups') }}</h1>
                 @foreach ($posts as $post)
-                    <div class="col-xs-12 col-sm-12 col-md-3 ">
+                    <div class="col-xs-12 col-sm-12 col-md-4 ">
                         <div class="card my-2">
                             <div class="messenger_brand"
                                 style="background: {{ $post->messengerBrand->color }}; color:white">
@@ -28,14 +31,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
-                                    <div class="d-flex justify-content-sm-center">
-                                        <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/default_group.png') }}"
+                                    <div class="d-flex justify-content-center justify-content-sm-center">
+                                        <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/images/default_group.png') }}"
                                             alt="" srcset=""
                                             style="max-width: 100%;height: auto;">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
-                                    <div class="d-flex flex-column align-items-sm-center">
+                                    <div class="d-flex flex-column align-items-sm-center card-body">
                                         <a
                                             style="text-decoration: none;"
                                             href="{{ route('groups.show_slug', ['post' => $post->id, 'slug' => str()->slug($post->title)]) }}">
@@ -46,7 +49,7 @@
                                                 {{ Str::limit($post->description, 255) }}
                                             </div>
                                         </a>
-                                        <div class="link mt-4">
+                                        <div class="link my-3 mx-auto">
                                             <a href="{{ $post->link }}">
                                                 {{ __('messages.enter_group') }}
                                             </a>
@@ -64,9 +67,9 @@
                 @foreach ($categories as $category)
                     <div class="col-xs-12 col-sm-12 col-md-3">
                         <div class="card my-2">
-                            <a href="{{ route('posts.category', $category->id) }}">
+                            <a href="{{ route('posts.category', ['category' => $category->id,'slug' => str()->slug($category->name)]) }}" style="text-decoration: none">
                                 <div class="text-center">
-                                    <i class="{{ $category->icon }}" style="font-size: 6rem;"></i>
+                                    <i class="{{ $category->icon }}" style="font-size: 6rem;color: black;"></i>
 
                                     <div class="title">
                                         {{ __("categories.{$category->translation_key}") }}

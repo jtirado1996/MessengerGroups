@@ -15,5 +15,6 @@ class UploadImageService
 
             return $fileName;
         }
+        return null;
     }
 }

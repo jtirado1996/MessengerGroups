@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PostCategoryController extends Controller
 {
-    public function postByCategory(Category $category)
+    public function postByCategory(Category $category, $slug)
     {
         $posts = Post::where('category_id', $category->id)->paginate(15);
         return view('groups.index', compact('posts'));

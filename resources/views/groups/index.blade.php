@@ -20,7 +20,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/default_group.png') }}"
+                                    <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/images/default_group.png') }}"
                                         alt="" srcset="" width="100" height="100">
                                 </div>
                                 <div class="col-md-6">

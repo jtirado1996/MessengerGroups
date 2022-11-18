@@ -15,7 +15,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-md-12 text-center">
-                                <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/default_group.png') }}"
+                                <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/images/default_group.png') }}"
                                     alt="" srcset="" width="200" height="200" class="text-center">
                             </div>
                             <div class="col-md-6">
