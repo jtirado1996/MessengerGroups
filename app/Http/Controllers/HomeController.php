@@ -4,18 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use Artesaos\SEOTools\Facades\SEOTools;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        seo()->title('Home');
-        seo()->description('List of public groups of Whatsapp, Telegram and Signal');
-        // seo()->twitter('card', 'Share your favorite whatsapp, telegram and signal groups');
-        seo()->og('site_name', 'guatsappgroup');
-        seo()->charset();
+        SEOTools::setTitle('Home');
+        SEOTools::setDescription('Publish your favorite whatsapp, telegram or signal group');
+        SEOTools::opengraph()->setUrl('https://guatsappgroup.xyz/');
+        SEOTools::setCanonical('https://guatsappgroup.xyz/');
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::opengraph()->addProperty('image', 'articles');
+
+        SEOTools::jsonLd()->addImage('https://a.pomf.cat/khejdj.jpeg');
+
         $posts = Post::with(['categories', 'messengerBrand'])
             ->take(10)
+            ->orderByDesc('id')
             ->get();
         $categories = Category::all();
         return view('home.index', compact('posts', 'categories'));
