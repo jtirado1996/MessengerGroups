@@ -37,7 +37,7 @@
                         <label for="category" class="form-label">{{ __('messages.form_create_group.category') }}</label>
                         <select class="form-select" name="category_id" id="category">
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}">{{ __('categories.'.$category->translation_key) }}</option>
                             @endforeach
                         </select>
                     </div>
