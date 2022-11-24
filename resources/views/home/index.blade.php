@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="">
             <!--Search-->
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <h1 class="text-center">{{ __('messages.search_title') }}</h1>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <!--Latest groups-->
-            <div class="">
+            <div class="row">
                 <h1 class="text-center">{{ __('messages.latest_groups') }}</h1>
                 @foreach ($posts as $post)
                     <div class="col-xs-12 col-sm-12 col-md-4 ">
