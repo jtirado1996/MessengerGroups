@@ -20,7 +20,7 @@
                 </div>
             </div>
             <!--Latest groups-->
-            <div class="row">
+            <div class="">
                 <h1 class="text-center">{{ __('messages.latest_groups') }}</h1>
                 @foreach ($posts as $post)
                     <div class="col-xs-12 col-sm-12 col-md-4 ">
