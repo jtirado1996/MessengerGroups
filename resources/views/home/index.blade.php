@@ -31,7 +31,7 @@
             <div class="col-xs-12 col-sm-12 col-md-4 ">
                 <div class="card my-2">
                     <div class="messenger_brand" style="background: {{ $post->messengerBrand->color }}; color:white">
-                        <i class="mr-4 {{$post->messengerBrand->icon}}"></i>{{ $post->messengerBrand->name }}
+                        <i class="m-2 {{$post->messengerBrand->icon}}"></i>{{ $post->messengerBrand->name }}
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
