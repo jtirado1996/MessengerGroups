@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('messenger_brands', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('color');
-            $table->string('icon');
-            $table->timestamps();
+        Schema::table('messenger_brands', function (Blueprint $table) {
+            if(!Schema::hasColumn('messenger_brands', 'icon')){
+                $table->string('icon');
+            }
         });
     }
 
@@ -29,6 +27,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messenger_brands');
+        Schema::table('messenger_brands', function (Blueprint $table) {
+            //
+        });
     }
 };

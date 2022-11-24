@@ -38,7 +38,7 @@
     <nav class="navbar navbar-expand-lg bg-light"
         style="background: rgb(0,187,45);background: linear-gradient(90deg, rgba(0,187,45,1) 0%, rgba(34,158,217,1) 50%, rgba(0,81,135,1) 100%);">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">GuatsAppGroups</a>
+            <a class="navbar-brand" href="#" style="color:white;">GuatsAppGroups</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,10 +46,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link active" style="color:white;" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page"
+                        <a class="nav-link" aria-current="page" style="color:white;"
                             href="{{ route('grupos.create') }}">{{ __('messages.create_new_group') }}</a>
                     </li>
                 </ul>
