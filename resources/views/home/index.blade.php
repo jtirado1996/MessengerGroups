@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('meta')
-{!! SEO::generate() !!}
+    {!! SEO::generate() !!}
 @endsection
 @section('content')
     <div class="container">
@@ -33,14 +33,12 @@
                                 <div class="col-sm-12 col-md-6">
                                     <div class="d-flex justify-content-center justify-content-sm-center">
                                         <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/images/default_group.png') }}"
-                                            alt="" srcset=""
-                                            style="max-width: 100%;height: auto;">
+                                            alt="{{ str()->slug($post->title) }}" srcset="" style="max-width: 100%;height: 130px;">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <div class="d-flex flex-column align-items-sm-center card-body">
-                                        <a
-                                            style="text-decoration: none;"
+                                        <a style="text-decoration: none;"
                                             href="{{ route('groups.show_slug', ['post' => $post->id, 'slug' => str()->slug($post->title)]) }}">
                                             <div class="title" style="word-break: break-word;">
                                                 {{ $post->title }}
@@ -67,7 +65,8 @@
                 @foreach ($categories as $category)
                     <div class="col-xs-12 col-sm-12 col-md-3">
                         <div class="card my-2">
-                            <a href="{{ route('posts.category', ['category' => $category->id,'slug' => str()->slug($category->name)]) }}" style="text-decoration: none">
+                            <a href="{{ route('posts.category', ['category' => $category->id, 'slug' => str()->slug($category->name)]) }}"
+                                style="text-decoration: none">
                                 <div class="text-center">
                                     <i class="{{ $category->icon }}" style="font-size: 6rem;color: black;"></i>
 
