@@ -3,6 +3,7 @@
 return [
   
     'search_bar' => 'Buscar un grupo',
+    'search_button' => 'Buscar',
     'search_title' => 'Buscar un grupo',
     'latest_groups' => 'Ultimos grupos',
     'categories' => 'Categorias',

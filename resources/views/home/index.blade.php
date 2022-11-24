@@ -15,7 +15,7 @@
                             <label for="query">{{ __('messages.search_bar') }}</label>
                             <input class="w-100" type="search" name="query" id="query"
                                 placeholder="{{ __('messages.search_bar') }}">
-                            <button type="submit" class="btn btn-primary">{{__('messages.search_button')}}</button>
+                            <button type="submit" class="btn btn-primary mt-3">{{__('messages.search_button')}}</button>
                         </form>
                     </div>
                 </div>
