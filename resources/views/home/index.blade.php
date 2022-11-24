@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="d-flex justify-content-center justify-content-sm-center">
-                                <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/images/default_group.png') }}" alt="" srcset="" style="max-width: 100%;height: auto;">
+                                <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/images/default_group.png') }}" alt="" srcset="" style="max-width: 100%;height: 130px;">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
