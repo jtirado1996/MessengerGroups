@@ -19,7 +19,7 @@
                         @csrf
                         <label for="query">{{ __('messages.search_bar') }}</label>
                         <input class="w-100" type="search" name="query" id="query" placeholder="{{ __('messages.search_bar') }}">
-                        <button type="submit" class="btn btn-primary mt-3">{{__('messages.search_button')}}</button>
+                        <button type="submit" class="btn btn-primary mt-3"><i class="me-2 bi bi-search"></i>{{__('messages.search_button')}}</button>
                     </form>
                 </div>
             </div>
