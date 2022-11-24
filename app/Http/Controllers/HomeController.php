@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        SEOTools::setTitle('Home');
+        SEOTools::setTitle('GuatsAppGroups - Home');
         SEOTools::setDescription('Publish your favorite whatsapp, telegram or signal group');
         SEOTools::opengraph()->setUrl('https://guatsappgroup.xyz/');
         SEOTools::setCanonical('https://guatsappgroup.xyz/');
