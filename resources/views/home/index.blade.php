@@ -36,16 +36,24 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="d-flex justify-content-center justify-content-sm-center">
-                                <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/images/default_group.png') }}" alt="" srcset="" style="max-width: 100%;height: auto;">
+                                <img src="{{ $post->image ? asset('storage/images/' . $post->image) : asset('storage/static/default.png') }}" alt="" srcset="" style="max-width: 100%;height: auto;">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="d-flex flex-column align-items-sm-center card-body">
                                 <a style="text-decoration: none;" href="{{ route('groups.show_slug', ['post' => $post->id, 'slug' => str()->slug($post->title)]) }}">
-                                    <div class="title" style="word-break: break-word;">
+                                    <div class="title" style="word-break: break-word;height: 7rem;line-height: 21px;word-break: break-all;    display: -webkit-box;    overflow: hidden;">
                                         {{ $post->title }}
                                     </div>
-                                    <div class="description small d-block" style="word-break: break-word;">
+                                    <div class="description small d-block" style="
+                                        word-break: break-word;
+                                        height: 6rem;
+                                        word-break: break-word;
+                                        line-height: 21px;
+                                        word-break: break-all;
+                                        display: -webkit-box;
+                                        overflow: hidden;
+                                        ">
                                         {{ Str::limit($post->description, 255) }}
                                     </div>
                                 </a>
