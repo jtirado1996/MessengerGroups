@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('meta')
-{!! SEO::generate() !!}
+    {!! SEO::generate() !!}
 @endsection
 @section('content')
 <style>
