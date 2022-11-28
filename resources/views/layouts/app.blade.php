@@ -46,11 +46,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" style="color:white;" aria-current="page" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link active" style="color:white;" aria-current="page"
+                            href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" style="color:white;"
                             href="{{ route('grupos.create') }}">{{ __('messages.create_new_group') }}</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active btn btn-succcess" style="color:white;" aria-current="page"
+                            href="{{ route('grupos.create') }}">
+                            {{ __('messages.create_new_group') }}
+                        </a>
                     </li>
                 </ul>
             </div>
