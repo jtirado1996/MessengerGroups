@@ -49,10 +49,10 @@
                         <a class="nav-link active" style="color:white;" aria-current="page"
                             href="{{ route('home') }}">Home</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" aria-current="page" style="color:white;"
                             href="{{ route('grupos.create') }}">{{ __('messages.create_new_group') }}</a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
