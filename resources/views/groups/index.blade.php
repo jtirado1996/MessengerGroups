@@ -46,7 +46,14 @@
                     {!! $posts->links() !!}
                 </div>
             @else
-                <div class="text text-center mx-auto" style="font: 400 5vmin 'Courgette'"><span style="font-size: 10vmin;">Ooops...</span><br>There are not data with that category.</div>
+                <div class="text text-center mx-auto" style="font: 400 5vmin 'Courgette'">
+                    {{__('messages.not_group')}}
+                    <a class="btn btn-success" style="color:white;" aria-current="page"
+                            href="{{ route('grupos.create') }}">
+                            {{ __('messages.create_new_group') }}
+                        </a>
+                    <img  style="width: 40%;" src="{{asset('storage/static/nothing.webp')}}" alt="nothing here">
+                </div>            
             @endif
 
         </div>

@@ -1,7 +1,6 @@
 <?php
   
-return [
-  
+return [  
     'search_bar' => 'Find a group',
     'search_button' => 'Search',
     'search_title' => 'Find a group',
@@ -20,5 +19,6 @@ return [
     'group_success' => 'Group created successfully',
     'links_error' => 'Field link has incorrect format',
     'create_new_group' => 'Create new group',
-    'back' => 'Back'
+    'back' => 'Back',
+    'not_group' => "There aren't groups with that category. Create one.."
 ];
